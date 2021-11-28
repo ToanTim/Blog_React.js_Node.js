@@ -1,0 +1,18 @@
+version: '2.4'
+
+services:
+  webapp:
+    image: ${WEBAPP_IMAGE}
+    ports: 
+      - "80:5000"
+    env_file: 
+      - .env
+    restart: always
+  api:
+    image: ${API_IMAGE}
+    ports:
+      - "4000:5000"
+    env_file:
+      - .env
+    restart: always
+  
